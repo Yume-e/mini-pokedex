@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
 import Searchbar from "./Searchbar";
@@ -49,7 +51,6 @@ export default function Home() {
         <Searchbar pokemonList={pokemonData}/>
       </div>
 
-      <p className="text-center text-gray-500">Cargando Pokemon... </p>
       <div className='px-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'> 
           {pokemonData.map((pokemon,index) => (
