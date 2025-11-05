@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
 import Searchbar from "./Searchbar";
