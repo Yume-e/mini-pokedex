@@ -3,13 +3,22 @@
 import { useState } from 'react' //va a manejar los resultados similares a la busqueda
 import { AiOutlineSearch } from 'react-icons/ai'
 
-const Searchbar = ({ pokemonList }) => {
-  const [activeSearch, setActiveSearch] = useState([]);//[variable,funcion]
+interface PokemonListItem {
+  id: number;
+  name: string;
+};
 
-  const handleSearch = (e) => {
+interface SearchbarProps {
+  pokemonList: PokemonListItem[];
+};
+
+const Searchbar = ({ pokemonList }: SearchbarProps) => {
+  const [activeSearch, setActiveSearch] = useState<PokemonListItem[]>([]);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     /**
      * e.target.value aguarda el texto ingresado
-     * toLowerCase devuelve el texto ingresado en minusculas
+     * toLowerCase devuelve el texto ingresado nen minusculas
      */
     const query = e.target.value.toLowerCase();
 
